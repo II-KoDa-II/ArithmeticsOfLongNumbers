@@ -73,8 +73,7 @@ int main() {
       if (conversion1[index] != conversion2[index]) {
         buffer = 0;
         break;
-      }
-      else {
+      } else {
         buffer = 1;
       }
     }
@@ -87,12 +86,10 @@ int main() {
       if (conversion1[index] < conversion2[index]) {
         buffer = 1;
         break;
-      }
-      else if (conversion1[index] > conversion2[index]) {
+      } else if (conversion1[index] > conversion2[index]) {
         buffer = 0;
         break;
-      }
-      else {
+      } else {
         buffer = 0;
       }
     }
@@ -103,12 +100,10 @@ int main() {
       if (conversion1[index] > conversion2[index]) {
         buffer = 1;
         break;
-      }
-      else if (conversion1[index] < conversion2[index]) {
+      } else if (conversion1[index] < conversion2[index]) {
         buffer = 0;
         break;
-      }
-      else {
+      } else {
         buffer = 0;
       }
     }
@@ -180,7 +175,6 @@ int main() {
   }
   
   if (operation == "*") {
-    // I'm not gonna sugarcoat it. This bullshit was rewritten like 20 times already before it worked.
     while (output.size() < conversion1.size() + conversion2.size()) {
       output.push_back(0);
     }
@@ -213,8 +207,7 @@ int main() {
         for (int index = 0; index < conversion2.size(); ++index) {
           divBuffer.insert(divBuffer.end(), conversion2[index]);
         }
-      }
-      else {
+      } else {
         for (int index = conversion2.size() - 1; index >= 0; --index) {
           divBuffer[divBuffer.size() - conversion2.size() + index] += conversion2[index];
         }
@@ -238,17 +231,14 @@ int main() {
           if (conversion1[index] < divBuffer[index]) {
             buffer = 1;
             break;
-          }
-          else if (conversion1[index] > divBuffer[index]) {
+          } else if (conversion1[index] > divBuffer[index]) {
             buffer = 0;
             break;
-          }
-          else {
+          } else {
             buffer = 0;
           }
         }
-      }
-      else if (divBuffer.size() > conversion1.size()) {
+      } else if (divBuffer.size() > conversion1.size()) {
         buffer = 1;
       }
       
@@ -259,8 +249,7 @@ int main() {
             if (index == 0) {
               output.insert(output.begin(), output[0] / 10);
               output[index + 1] %= 10;
-            }
-            else {
+            } else {
               output[index - 1] += output[index] / 10;
               output[index] %= 10;
             }
@@ -274,4 +263,5 @@ int main() {
 
   return 0;
 }
+
 
